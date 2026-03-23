@@ -4,52 +4,256 @@
       "id": "foundations",
       "title": "Foundations",
       "description": "Get comfortable with GitHub basics",
+      "color": "#f59e0b",
       "nodes": [
-        { "id": "account", "title": "Create a GitHub account", "description": "Sign up at github.com" },
-        { "id": "first-repo", "title": "Create your first repo", "description": "A repo is a project folder with memory" },
-        { "id": "first-commit", "title": "Make your first commit", "description": "Save your changes with a description" },
-        { "id": "readme", "title": "Write a README", "description": "Your repo's front door" },
-        { "id": "gitignore", "title": "Set up .gitignore", "description": "Keep junk out of your repo" },
-        { "id": "github-desktop", "title": "Try GitHub Desktop", "description": "Visual interface, no terminal needed" }
+        {
+          "id": "account",
+          "title": "Create a GitHub account",
+          "description": "Sign up at github.com. Pick a username you'd be comfortable putting on a business card.",
+          "resources": [
+            { "type": "official", "title": "Sign up for GitHub", "url": "https://github.com/signup" }
+          ],
+          "tryIt": "Go to github.com/signup and create your account."
+        },
+        {
+          "id": "first-repo",
+          "title": "Create your first repo",
+          "description": "A repository is a project folder with memory. Every change you make is tracked, so you can always go back. Think of it as Google Docs version history for everything.",
+          "resources": [
+            { "type": "official", "title": "Create a repo", "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository" },
+            { "type": "video", "title": "GitHub in 20 minutes", "url": "https://www.youtube.com/watch?v=nhNq2kIvi9s" }
+          ],
+          "tryIt": "Click the + button in GitHub's top nav and select 'New repository'. Name it 'my-first-repo' and check 'Add a README'."
+        },
+        {
+          "id": "first-commit",
+          "title": "Make your first commit",
+          "description": "A commit is a save point with a description. Instead of just saving a file, you describe what you changed and why. This builds a timeline of your project's history.",
+          "resources": [
+            { "type": "official", "title": "Committing changes", "url": "https://docs.github.com/en/pull-requests/committing-changes-to-your-project" }
+          ],
+          "tryIt": "Edit the README in your repo on GitHub.com. Click the pencil icon, make a change, then click 'Commit changes' with a descriptive message."
+        },
+        {
+          "id": "readme",
+          "title": "Write a README",
+          "description": "The README is your repo's front door. It's the first thing people see. A good README explains what this project is, how to use it, and why it exists. Write it in Markdown -- a simple formatting language that GitHub renders nicely.",
+          "resources": [
+            { "type": "official", "title": "About READMEs", "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes" },
+            { "type": "article", "title": "Markdown cheat sheet", "url": "https://www.markdownguide.org/cheat-sheet/" }
+          ],
+          "tryIt": "Rewrite your repo's README. Include: a title, one sentence about what it is, and a 'Getting Started' section."
+        },
+        {
+          "id": "gitignore",
+          "title": "Set up .gitignore",
+          "description": "Not everything belongs in your repo. The .gitignore file tells GitHub to skip certain files -- things like passwords, temporary files, or large files that don't need tracking. This keeps your repo clean and secure.",
+          "resources": [
+            { "type": "official", "title": "Ignoring files", "url": "https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files" },
+            { "type": "article", "title": "gitignore templates", "url": "https://github.com/github/gitignore" }
+          ],
+          "tryIt": "Create a .gitignore file in your repo. Add '.env' and '.DS_Store' as your first two entries."
+        },
+        {
+          "id": "github-desktop",
+          "title": "Try GitHub Desktop",
+          "description": "GitHub Desktop is a visual app for managing repos without the terminal. You can see changes, make commits, push code, and switch branches -- all with buttons instead of commands.",
+          "resources": [
+            { "type": "official", "title": "GitHub Desktop", "url": "https://desktop.github.com/" },
+            { "type": "official", "title": "Getting started with GitHub Desktop", "url": "https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop" }
+          ],
+          "tryIt": "Download GitHub Desktop, sign in, and clone your repo. Make a change to any file and commit it through the app."
+        }
       ]
     },
     {
       "id": "build-ship",
       "title": "Build & Ship",
       "description": "Get something live on the internet",
+      "color": "#3b82f6",
       "nodes": [
-        { "id": "clone", "title": "Clone a repo", "description": "Copy a project to your machine" },
-        { "id": "edit-push", "title": "Edit and push changes", "description": "The core loop: change, commit, push" },
-        { "id": "github-pages", "title": "Deploy with GitHub Pages", "description": "Free hosting for static sites" },
-        { "id": "actions", "title": "Set up GitHub Actions", "description": "Auto-deploy when you push" },
-        { "id": "custom-domain", "title": "Add a custom domain", "description": "Your own URL" },
-        { "id": "branches", "title": "Use branches for experiments", "description": "Try things without breaking main" }
+        {
+          "id": "clone",
+          "title": "Clone a repo",
+          "description": "Cloning copies a repo to your machine so you can work on it locally. It's like downloading, but smarter -- it keeps the connection to GitHub so you can push changes back.",
+          "resources": [
+            { "type": "official", "title": "Cloning a repository", "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository" }
+          ],
+          "tryIt": "In GitHub Desktop, click 'Clone a Repository' and select one of your repos. Or use the 'Code' button on any GitHub repo page."
+        },
+        {
+          "id": "edit-push",
+          "title": "Edit and push changes",
+          "description": "The core loop of working with GitHub: make changes locally, commit them (save with a description), then push to GitHub (upload). This is the rhythm you'll use every day.",
+          "resources": [
+            { "type": "official", "title": "Pushing commits", "url": "https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository" }
+          ],
+          "tryIt": "Open a cloned repo, edit any file, commit with a descriptive message, then push. Check GitHub.com to see your change appear."
+        },
+        {
+          "id": "github-pages",
+          "title": "Deploy with GitHub Pages",
+          "description": "GitHub Pages turns a repo into a free website. Push HTML, CSS, and JavaScript files, and GitHub hosts them at yourname.github.io/repo-name. No server setup, no hosting bills.",
+          "resources": [
+            { "type": "official", "title": "GitHub Pages quickstart", "url": "https://docs.github.com/en/pages/quickstart" },
+            { "type": "video", "title": "Deploy a site in 3 minutes", "url": "https://www.youtube.com/watch?v=OltY8JIaP-4" }
+          ],
+          "tryIt": "Go to your repo's Settings > Pages. Set source to 'main' branch and save. Your site will be live in about a minute."
+        },
+        {
+          "id": "actions",
+          "title": "Set up GitHub Actions",
+          "description": "Actions are automations that run when something happens in your repo. Push code? Automatically deploy your site. Create an issue? Send a notification. It's like setting up rules in your email, but for your code.",
+          "resources": [
+            { "type": "official", "title": "GitHub Actions quickstart", "url": "https://docs.github.com/en/actions/quickstart" },
+            { "type": "article", "title": "Awesome GitHub Actions", "url": "https://github.com/sdras/awesome-actions" }
+          ],
+          "tryIt": "Check the .github/workflows/ folder in your GitHub OS repo. The deploy-roadmap.yml file is a working Action -- read through it to see how it works."
+        },
+        {
+          "id": "custom-domain",
+          "title": "Add a custom domain",
+          "description": "Instead of yourname.github.io, point your own domain (like mysite.com) at your GitHub Pages site. Free hosting with your own URL.",
+          "resources": [
+            { "type": "official", "title": "Custom domains for GitHub Pages", "url": "https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site" }
+          ],
+          "tryIt": "If you own a domain, go to Settings > Pages > Custom domain and follow the DNS setup instructions."
+        },
+        {
+          "id": "branches",
+          "title": "Use branches for experiments",
+          "description": "A branch is a copy of your project where you can try things without affecting the main version. If the experiment works, merge it in. If it doesn't, delete the branch. No harm done.",
+          "resources": [
+            { "type": "official", "title": "About branches", "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches" }
+          ],
+          "tryIt": "Create a branch called 'experiment' in your repo. Make a change, commit it, then create a Pull Request to merge it back."
+        }
       ]
     },
     {
       "id": "run-business",
       "title": "Run Your Business",
       "description": "Use GitHub as your operations hub",
+      "color": "#10b981",
       "nodes": [
-        { "id": "issues", "title": "Use Issues as a task tracker", "description": "Better than sticky notes" },
-        { "id": "projects", "title": "Set up a Project board", "description": "Kanban for free" },
-        { "id": "templates", "title": "Create issue templates", "description": "Standardize how work gets captured" },
-        { "id": "sops", "title": "Write SOPs in markdown", "description": "Document how you do things" },
-        { "id": "decisions", "title": "Keep a decision log", "description": "Remember why you chose what you chose" },
-        { "id": "collaborate", "title": "Collaborate with PRs", "description": "Review before merging" }
+        {
+          "id": "issues",
+          "title": "Use Issues as a task tracker",
+          "description": "GitHub Issues is a built-in task tracker. Each issue is a task, bug, or idea. You can assign them, label them, add due dates, and close them when done. Better than sticky notes, cheaper than project management software.",
+          "resources": [
+            { "type": "official", "title": "About issues", "url": "https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues" }
+          ],
+          "tryIt": "Create 3 issues in your repo for things you need to do this week. Add labels like 'priority' or 'idea'."
+        },
+        {
+          "id": "projects",
+          "title": "Set up a Project board",
+          "description": "GitHub Projects gives you a kanban board (like Trello) connected to your issues. Drag tasks between columns like 'To Do', 'In Progress', and 'Done'. It's free and built into GitHub.",
+          "resources": [
+            { "type": "official", "title": "About Projects", "url": "https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects" }
+          ],
+          "tryIt": "Go to your repo's Projects tab and create a new project. Add your existing issues to it."
+        },
+        {
+          "id": "templates",
+          "title": "Create issue templates",
+          "description": "Issue templates standardize how work gets captured. Instead of a blank text box, contributors get a structured form. Your GitHub OS repo already has templates for ideas, tasks, and questions.",
+          "resources": [
+            { "type": "official", "title": "Issue templates", "url": "https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository" }
+          ],
+          "tryIt": "Try creating a new issue in your repo -- you should see the pre-built templates. Customize one to fit your workflow."
+        },
+        {
+          "id": "sops",
+          "title": "Write SOPs in markdown",
+          "description": "Standard Operating Procedures document how you do things. Writing them in markdown and storing them in your repo means they're versioned (you can see what changed), searchable, and always accessible.",
+          "resources": [
+            { "type": "article", "title": "Markdown guide", "url": "https://www.markdownguide.org/" }
+          ],
+          "tryIt": "Write your first SOP in docs/sops/. Pick something you do regularly and document the steps."
+        },
+        {
+          "id": "decisions",
+          "title": "Keep a decision log",
+          "description": "A decision log records what you decided, when, and why. Six months from now when you ask 'why did we do it this way?', the answer is in the log. Your repo includes a template.",
+          "resources": [
+            { "type": "article", "title": "Decision records", "url": "https://adr.github.io/" }
+          ],
+          "tryIt": "Copy docs/decisions/000-template.md to 001-first-decision.md and fill it out for a recent decision you made."
+        },
+        {
+          "id": "collaborate",
+          "title": "Collaborate with PRs",
+          "description": "Pull Requests are how changes get reviewed before merging. Even solo, they create a record of what changed and why. For teams, they're essential -- no one changes the main branch without review.",
+          "resources": [
+            { "type": "official", "title": "About pull requests", "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests" }
+          ],
+          "tryIt": "Create a branch, make a change, then open a Pull Request. Read through the diff view before merging."
+        }
       ]
     },
     {
       "id": "ai-powered",
       "title": "AI-Powered",
       "description": "Supercharge your OS with AI",
+      "color": "#8b5cf6",
       "nodes": [
-        { "id": "claude-md", "title": "Understand CLAUDE.md", "description": "The file that configures your AI" },
-        { "id": "ai-tool", "title": "Install an AI tool", "description": "Claude Code, Cursor, or Claude Desktop" },
-        { "id": "commands", "title": "Use slash commands", "description": "/plan, /write, /review, /brainstorm" },
-        { "id": "first-skill", "title": "Add your first skill", "description": "Teach AI something new with a text file" },
-        { "id": "custom-command", "title": "Create a custom command", "description": "Your own quick action" },
-        { "id": "share", "title": "Share skills with others", "description": "Skills are just files -- share them on GitHub" }
+        {
+          "id": "claude-md",
+          "title": "Understand CLAUDE.md",
+          "description": "CLAUDE.md is a text file that configures how AI behaves in your repo. It tells AI tools who you are, what you're working on, and how to help. Think of it as onboarding instructions for your AI assistant.",
+          "resources": [
+            { "type": "article", "title": "CLAUDE.md best practices", "url": "https://docs.anthropic.com/en/docs/claude-code/memory#claudemd" }
+          ],
+          "tryIt": "Open the CLAUDE.md in your repo and read through it. Try editing the 'How to Behave' section to match your preferences."
+        },
+        {
+          "id": "ai-tool",
+          "title": "Install an AI tool",
+          "description": "AI coding tools read your repo (including CLAUDE.md) and help you work. Claude Code runs in the terminal. Claude Desktop and Cursor are visual apps. All of them can read your GitHub OS configuration.",
+          "resources": [
+            { "type": "official", "title": "Claude Code", "url": "https://docs.anthropic.com/en/docs/claude-code" },
+            { "type": "official", "title": "Cursor", "url": "https://cursor.sh/" },
+            { "type": "official", "title": "Claude Desktop", "url": "https://claude.ai/download" }
+          ],
+          "tryIt": "Install one of the AI tools and open your GitHub OS repo in it. Ask it 'what's in this repo?' and see how it responds."
+        },
+        {
+          "id": "commands",
+          "title": "Use slash commands",
+          "description": "Slash commands are quick actions defined in .claude/commands/. Type /plan to break a goal into steps, /write to draft content, /review to get feedback. Each command is a markdown file with instructions AI follows.",
+          "resources": [
+            { "type": "article", "title": "Custom slash commands", "url": "https://docs.anthropic.com/en/docs/claude-code/slash-commands" }
+          ],
+          "tryIt": "Open your repo in Claude Code and try: /plan [your 30-day goal]. See how AI uses your config.json context."
+        },
+        {
+          "id": "first-skill",
+          "title": "Add your first skill",
+          "description": "Skills are deeper capabilities stored in .claude/skills/. Each skill is a SKILL.md file that teaches AI how to do something specific. Your repo comes with skills for planning, reviewing, deploying, and organizing.",
+          "resources": [
+            { "type": "article", "title": "Claude Code skills", "url": "https://docs.anthropic.com/en/docs/claude-code/skills" }
+          ],
+          "tryIt": "Read one of the existing skills in .claude/skills/. Then create a new folder with your own SKILL.md for something you want AI to help with."
+        },
+        {
+          "id": "custom-command",
+          "title": "Create a custom command",
+          "description": "Commands are just markdown files in .claude/commands/. Create a new .md file, write instructions for what the command should do, and it becomes available as a slash command. No code needed.",
+          "resources": [
+            { "type": "article", "title": "Custom commands docs", "url": "https://docs.anthropic.com/en/docs/claude-code/slash-commands" }
+          ],
+          "tryIt": "Create .claude/commands/daily.md with instructions for a daily standup: summarize yesterday's commits, check open issues, suggest today's focus."
+        },
+        {
+          "id": "share",
+          "title": "Share skills with others",
+          "description": "Since skills and commands are just files in a repo, sharing them is as easy as sharing a GitHub link. Others can copy your skills into their repos, or you can create a template repo of your best skills.",
+          "resources": [
+            { "type": "official", "title": "Template repositories", "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository" }
+          ],
+          "tryIt": "Share your GitHub OS repo link with someone. They can browse your skills and copy any they find useful."
+        }
       ]
     }
   ]

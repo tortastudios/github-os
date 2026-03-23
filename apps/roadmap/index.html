@@ -7,8 +7,39 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>GitHub OS Roadmap</h1>
-  <p>Coming soon. This will be your interactive progress dashboard.</p>
+  <header class="header">
+    <div class="header-content">
+      <h1>GitHub OS</h1>
+      <p class="subtitle">Your roadmap to operating from GitHub</p>
+      <div class="progress-total">
+        <div class="progress-bar">
+          <div class="progress-fill" id="total-progress"></div>
+        </div>
+        <span class="progress-label" id="total-label">0 / 24 complete</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="roadmap" id="roadmap"></main>
+
+  <!-- Side drawer -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer-header">
+      <div class="drawer-status" id="drawer-status"></div>
+      <button class="drawer-close" id="drawer-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <h2 class="drawer-title" id="drawer-title"></h2>
+      <p class="drawer-description" id="drawer-description"></p>
+      <div class="drawer-resources" id="drawer-resources"></div>
+      <div class="drawer-tryit" id="drawer-tryit"></div>
+      <div class="drawer-actions">
+        <button class="btn-toggle-status" id="drawer-toggle"></button>
+      </div>
+    </div>
+  </aside>
+
   <script src="app.js"></script>
 </body>
 </html>
