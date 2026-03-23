@@ -3,6 +3,7 @@
 // ------------------------------------------------
 
 const STORAGE_KEY = 'github-os-progress';
+const guideCache = {};
 let data = null;
 let progress = {};
 let activeNodeId = null;
@@ -108,6 +109,15 @@ function openDrawer(nodeId) {
     tryitEl.innerHTML = '';
   }
 
+  // Guide
+  const guideEl = document.getElementById('drawer-guide');
+  guideEl.innerHTML = '<div class="guide-loading">Loading guide...</div>';
+  loadGuide(nodeId).then(html => {
+    if (activeNodeId === nodeId) {
+      guideEl.innerHTML = html || '';
+    }
+  });
+
   // Toggle button
   const toggleEl = document.getElementById('drawer-toggle');
   toggleEl.textContent = isDone ? 'Mark as incomplete' : 'Mark as complete';
@@ -116,6 +126,128 @@ function openDrawer(nodeId) {
   // Open
   document.getElementById('drawer').classList.add('open');
   document.getElementById('drawer-overlay').classList.add('open');
+}
+
+// --- Guide loader ---
+
+async function loadGuide(nodeId) {
+  if (guideCache[nodeId]) return guideCache[nodeId];
+
+  try {
+    const res = await fetch(`guides/${nodeId}.md`);
+    if (!res.ok) return '';
+    const md = await res.text();
+    // Skip the first heading (redundant with drawer title)
+    const trimmed = md.replace(/^#\s+.+\n+/, '');
+    const html = `<div class="guide-content">${renderMarkdown(trimmed)}</div>`;
+    guideCache[nodeId] = html;
+    return html;
+  } catch {
+    return '';
+  }
+}
+
+// --- Lightweight markdown renderer ---
+
+function renderMarkdown(md) {
+  let html = '';
+  const lines = md.split('\n');
+  let i = 0;
+  let inList = false;
+  let inCode = false;
+  let codeBlock = '';
+  let codeLang = '';
+
+  while (i < lines.length) {
+    const line = lines[i];
+
+    // Fenced code blocks
+    if (line.startsWith('```')) {
+      if (inCode) {
+        html += `<pre><code>${escapeHtml(codeBlock.trimEnd())}</code></pre>`;
+        codeBlock = '';
+        codeLang = '';
+        inCode = false;
+      } else {
+        if (inList) { html += '</ul>'; inList = false; }
+        inCode = true;
+        codeLang = line.slice(3).trim();
+      }
+      i++;
+      continue;
+    }
+
+    if (inCode) {
+      codeBlock += line + '\n';
+      i++;
+      continue;
+    }
+
+    // Headings
+    const headingMatch = line.match(/^(#{2,4})\s+(.+)/);
+    if (headingMatch) {
+      if (inList) { html += '</ul>'; inList = false; }
+      const level = headingMatch[1].length;
+      html += `<h${level} class="guide-h${level}">${inlineFormat(headingMatch[2])}</h${level}>`;
+      i++;
+      continue;
+    }
+
+    // List items
+    if (line.match(/^[-*]\s+/)) {
+      if (!inList) { html += '<ul>'; inList = true; }
+      html += `<li>${inlineFormat(line.replace(/^[-*]\s+/, ''))}</li>`;
+      i++;
+      continue;
+    }
+
+    // Numbered list items
+    if (line.match(/^\d+\.\s+/)) {
+      // Use ul styling for simplicity
+      if (!inList) { html += '<ol>'; inList = true; }
+      html += `<li>${inlineFormat(line.replace(/^\d+\.\s+/, ''))}</li>`;
+      i++;
+      continue;
+    }
+
+    // Close list if non-list line
+    if (inList && line.trim() === '') {
+      html += inList ? (html.includes('<ol>') ? '</ol>' : '</ul>') : '';
+      inList = false;
+      i++;
+      continue;
+    }
+
+    // Paragraph
+    if (line.trim()) {
+      if (inList) { html += '</ul>'; inList = false; }
+      html += `<p>${inlineFormat(line)}</p>`;
+    }
+
+    i++;
+  }
+
+  if (inList) html += '</ul>';
+  if (inCode) html += `<pre><code>${escapeHtml(codeBlock.trimEnd())}</code></pre>`;
+
+  return html;
+}
+
+function inlineFormat(text) {
+  return text
+    // Bold
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    // Inline code
+    .replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>')
+    // Links
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+}
+
+function escapeHtml(text) {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 }
 
 function closeDrawer() {

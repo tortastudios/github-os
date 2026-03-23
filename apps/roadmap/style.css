@@ -323,6 +323,101 @@ body {
 
 /* Resources */
 
+/* Guide content */
+
+.guide-loading {
+  color: var(--text-dim);
+  font-size: 13px;
+  padding: 8px 0 16px;
+}
+
+.guide-content {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.guide-content h2.guide-h2 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--text);
+  margin: 20px 0 8px;
+}
+
+.guide-content h2.guide-h2:first-child {
+  margin-top: 0;
+}
+
+.guide-content h3.guide-h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 16px 0 6px;
+}
+
+.guide-content p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 6px 0;
+}
+
+.guide-content ul,
+.guide-content ol {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-left: 20px;
+  margin: 6px 0;
+}
+
+.guide-content li {
+  margin: 4px 0;
+}
+
+.guide-content pre {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  overflow-x: auto;
+}
+
+.guide-content pre code {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, monospace;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.guide-content .inline-code {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, monospace;
+  font-size: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.guide-content a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.guide-content a:hover {
+  text-decoration: underline;
+}
+
+.guide-content strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Resources */
+
 .drawer-resources h3,
 .drawer-tryit h3 {
   font-size: 12px;
