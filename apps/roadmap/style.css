@@ -383,7 +383,8 @@ body {
   border-radius: 6px;
   padding: 12px 14px;
   margin: 10px 0;
-  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .guide-content pre code {
@@ -391,6 +392,8 @@ body {
   font-size: 13px;
   color: var(--text);
   line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .guide-content .inline-code {
