@@ -1,0 +1,56 @@
+{
+  "tracks": [
+    {
+      "id": "foundations",
+      "title": "Foundations",
+      "description": "Get comfortable with GitHub basics",
+      "nodes": [
+        { "id": "account", "title": "Create a GitHub account", "description": "Sign up at github.com" },
+        { "id": "first-repo", "title": "Create your first repo", "description": "A repo is a project folder with memory" },
+        { "id": "first-commit", "title": "Make your first commit", "description": "Save your changes with a description" },
+        { "id": "readme", "title": "Write a README", "description": "Your repo's front door" },
+        { "id": "gitignore", "title": "Set up .gitignore", "description": "Keep junk out of your repo" },
+        { "id": "github-desktop", "title": "Try GitHub Desktop", "description": "Visual interface, no terminal needed" }
+      ]
+    },
+    {
+      "id": "build-ship",
+      "title": "Build & Ship",
+      "description": "Get something live on the internet",
+      "nodes": [
+        { "id": "clone", "title": "Clone a repo", "description": "Copy a project to your machine" },
+        { "id": "edit-push", "title": "Edit and push changes", "description": "The core loop: change, commit, push" },
+        { "id": "github-pages", "title": "Deploy with GitHub Pages", "description": "Free hosting for static sites" },
+        { "id": "actions", "title": "Set up GitHub Actions", "description": "Auto-deploy when you push" },
+        { "id": "custom-domain", "title": "Add a custom domain", "description": "Your own URL" },
+        { "id": "branches", "title": "Use branches for experiments", "description": "Try things without breaking main" }
+      ]
+    },
+    {
+      "id": "run-business",
+      "title": "Run Your Business",
+      "description": "Use GitHub as your operations hub",
+      "nodes": [
+        { "id": "issues", "title": "Use Issues as a task tracker", "description": "Better than sticky notes" },
+        { "id": "projects", "title": "Set up a Project board", "description": "Kanban for free" },
+        { "id": "templates", "title": "Create issue templates", "description": "Standardize how work gets captured" },
+        { "id": "sops", "title": "Write SOPs in markdown", "description": "Document how you do things" },
+        { "id": "decisions", "title": "Keep a decision log", "description": "Remember why you chose what you chose" },
+        { "id": "collaborate", "title": "Collaborate with PRs", "description": "Review before merging" }
+      ]
+    },
+    {
+      "id": "ai-powered",
+      "title": "AI-Powered",
+      "description": "Supercharge your OS with AI",
+      "nodes": [
+        { "id": "claude-md", "title": "Understand CLAUDE.md", "description": "The file that configures your AI" },
+        { "id": "ai-tool", "title": "Install an AI tool", "description": "Claude Code, Cursor, or Claude Desktop" },
+        { "id": "commands", "title": "Use slash commands", "description": "/plan, /write, /review, /brainstorm" },
+        { "id": "first-skill", "title": "Add your first skill", "description": "Teach AI something new with a text file" },
+        { "id": "custom-command", "title": "Create a custom command", "description": "Your own quick action" },
+        { "id": "share", "title": "Share skills with others", "description": "Skills are just files -- share them on GitHub" }
+      ]
+    }
+  ]
+}

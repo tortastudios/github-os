@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment and secrets
+.env
+.env.local
+*.key
+*.pem
+
+# Node (if they add apps that use it)
+node_modules/
+.next/
+dist/
+build/
+
+# Python (if they add apps that use it)
+__pycache__/
+*.pyc
+venv/
+.venv/
