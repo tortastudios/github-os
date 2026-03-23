@@ -9,6 +9,7 @@ Everything below is Claude-specific.
 Slash commands are defined in `.claude/commands/`:
 
 - `/setup` -- Interactive interview to configure this OS
+- `/build-manual` -- Deeper interview that generates the operating manual
 - `/plan` -- Break a goal into phases and steps
 - `/brainstorm` -- Generate ideas, score on effort vs. impact
 - `/write` -- Draft content in any format
@@ -23,5 +24,6 @@ Deep capabilities in `.claude/skills/`:
 - **code-reviewer** -- Review any work product with structured feedback
 - **deploy-guide** -- Get projects live on the internet
 - **repo-organizer** -- Keep the OS tidy, files in the right place
+- **find-skills** -- Discover and install community skills from skills.sh
 
 Also check `.agents/skills/` for shared skills usable by any AI tool.
