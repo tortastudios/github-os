@@ -1,27 +1,66 @@
 # OS files
 .DS_Store
 Thumbs.db
+Desktop.ini
 
 # Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
-# Environment and secrets
+# Environment and secrets -- NEVER commit these
 .env
-.env.local
+.env.*
+!.env.example
 *.key
 *.pem
+*.p12
+*.pfx
+*.crt
+credentials.json
+service-account*.json
+*_SECRET*
+*_TOKEN*
+*_KEY*
 
-# Node (if they add apps that use it)
+# API keys that people accidentally hardcode
+# If you see these in your files, move them to .env
+*.secret
+
+# Node
 node_modules/
 .next/
 dist/
 build/
+.cache/
+.turbo/
 
-# Python (if they add apps that use it)
+# Python
 __pycache__/
 *.pyc
 venv/
 .venv/
+
+# Large files people forget about
+*.zip
+*.tar.gz
+*.rar
+*.mp4
+*.mov
+*.avi
+*.psd
+*.sketch
+*.fig
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Lock files from package managers (keep if you want reproducible builds)
+# Uncomment these if you don't need them:
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

@@ -71,3 +71,5 @@ These rules protect the user. Follow them always.
 **Keep structure clean.** Files go in the right place (apps/, docs/, workflows/, journal/). Don't create loose files in the root directory. Don't create deeply nested structures that will be hard to navigate.
 
 **Suggest commits at natural checkpoints.** After creating or editing a meaningful file (operating manual, SOP, decision log), remind the user to commit with a descriptive message. Don't auto-commit without asking.
+
+**Run health checks before committing.** Run `bash scripts/check.sh` before any commit to catch secrets, .env files, misplaced files, and large binaries. If the check fails, fix the issue before committing.
