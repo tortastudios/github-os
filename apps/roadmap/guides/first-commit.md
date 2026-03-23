@@ -1,21 +1,20 @@
 # Make Your First Commit
 
-A commit is a save point with a description. Instead of just saving a file, you describe what you changed and why. Over time, these commits build a timeline of your project's history that you (and others) can read.
+After running /setup (or editing config.json by hand), your file has changed but those changes aren't saved to your project history yet. Committing captures what changed and why. This is the core rhythm of GitHub: change, describe, save.
 
 ## How to do it
 
-1. Open your repo on GitHub.com
-2. Click on the **README.md** file
-3. Click the **pencil icon** (edit) in the top-right of the file
-4. Make a change -- add a sentence about what this project is for
-5. Click **Commit changes**
-6. Write a short commit message describing what you changed
-7. Click **Commit changes** again to confirm
+1. If you edited config.json on GitHub.com, you already committed -- GitHub prompted you to describe the change when you saved
+2. If you used an AI tool locally, open your terminal or GitHub Desktop
+3. Stage the changed file (config.json)
+4. Write a short message like "configure my OS with personal context"
+5. Commit
 
 ## Try it
 
 ```
-Edit your README and add this line: "This is my first project on GitHub." Then commit it with the message: "Add project description to README"
+If you haven't committed yet, do it now. Your message should describe the change:
+"configure my OS with personal context"
 ```
 
 ## Resources
@@ -24,5 +23,5 @@ Edit your README and add this line: "This is my first project on GitHub." Then c
 
 ## Tips
 
-- Write commit messages that explain **why** you changed something, not just what. "Fix typo in heading" is better than "Update README.md".
+- Write commit messages that explain **why**, not just what. "Configure OS with my goals and preferences" beats "Update config.json".
 - Commit often. Small, frequent commits are easier to understand than one giant change.
