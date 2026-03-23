@@ -18,7 +18,8 @@ apps/           Your projects. Each app gets its own folder.
 workflows/      Repeatable processes and automations.
 docs/           Business docs, SOPs, playbooks, decision logs.
 journal/        Daily notes, weekly reflections, whatever you want.
-.claude/        AI configuration. Skills, commands, personality.
+.claude/        Claude-specific commands and skills.
+.agents/        Shared agent configs and skills (works with any AI tool).
 .github/        Issue templates and GitHub Actions.
 ```
 
@@ -37,9 +38,11 @@ journal/        Daily notes, weekly reflections, whatever you want.
 
 `config.json` holds your identity -- name, project, goals, how you want AI to talk to you.
 
-`CLAUDE.md` tells AI how to behave. It reads your config and adapts.
+`agents.md` tells AI tools how to behave. It reads your config and adapts. Works with Claude, Cursor, Copilot, and others.
 
-`.claude/skills/` are deep capabilities. Drop in new ones to teach AI new things.
+`CLAUDE.md` adds Claude-specific configuration on top of agents.md.
+
+`.claude/skills/` and `.agents/skills/` are deep capabilities. Drop in new ones to teach AI new things.
 
 `.claude/commands/` are quick actions. Each one is a markdown file with instructions.
 
@@ -53,5 +56,9 @@ journal/        Daily notes, weekly reflections, whatever you want.
 - Create workflow templates in `workflows/`
 - Use GitHub Issues as your task tracker
 - Use GitHub Projects for kanban boards
+
+## License
+
+CC BY-NC 4.0 -- free to use and adapt, just give credit and don't sell it.
 
 ## Built by [Torta Studios](https://tortastudios.com)
