@@ -49,6 +49,7 @@ These are defined in `.claude/commands/` but the patterns work in any AI tool:
 | `/write` | Draft content in any format |
 | `/review` | Get feedback on work |
 | `/ship` | Pre-launch checklist and deploy guidance |
+| `/add-goal` | Add a custom goal to your personal roadmap |
 
 ## Skills
 

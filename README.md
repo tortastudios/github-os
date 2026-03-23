@@ -35,6 +35,7 @@ journal/        Daily notes, weekly reflections, whatever you want.
 | `/write` | Draft content -- blogs, docs, social, whatever |
 | `/review` | Get feedback on your work |
 | `/ship` | Pre-launch checklist and deploy guidance |
+| `/add-goal` | Add a custom goal to your personal roadmap |
 
 ## How It Works
 

@@ -4,6 +4,8 @@
 
 const STORAGE_KEY = 'github-os-progress';
 const guideCache = {};
+let baseData = null;
+let customData = null;
 let data = null;
 let progress = {};
 let activeNodeId = null;
@@ -12,8 +14,27 @@ let activeNodeId = null;
 
 async function init() {
   progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-  const res = await fetch('data/roadmap.json');
-  data = await res.json();
+
+  const [baseRes, customRes] = await Promise.all([
+    fetch('data/roadmap.json'),
+    fetch('data/my-roadmap.json').catch(() => null)
+  ]);
+
+  baseData = await baseRes.json();
+  try {
+    customData = customRes ? await customRes.json() : null;
+  } catch {
+    customData = null;
+  }
+
+  // Merge: base tracks first, then custom tracks
+  data = {
+    tracks: [
+      ...baseData.tracks,
+      ...(customData && customData.tracks ? customData.tracks : [])
+    ]
+  };
+
   render();
 }
 
@@ -23,36 +44,40 @@ function render() {
   const roadmap = document.getElementById('roadmap');
   roadmap.innerHTML = '';
 
-  data.tracks.forEach(track => {
-    const trackEl = document.createElement('div');
-    trackEl.className = 'track';
+  const baseTrackIds = new Set(baseData.tracks.map(t => t.id));
+  const hasCustom = customData && customData.tracks && customData.tracks.length > 0;
 
-    const doneCount = track.nodes.filter(n => progress[n.id]).length;
-    const totalCount = track.nodes.length;
+  // Base section
+  const baseSection = document.createElement('div');
+  baseSection.className = 'roadmap-section';
+  baseSection.innerHTML = '<div class="section-label">Core</div>';
 
-    trackEl.innerHTML = `
-      <div class="track-header">
-        <div class="track-title" style="color: ${track.color}">${track.title}</div>
-        <div class="track-desc">${track.description}</div>
-        <div class="track-progress">${doneCount} / ${totalCount}</div>
-      </div>
-      <div class="track-spine">
-        ${track.nodes.map((node, i) => `
-          ${i > 0 ? '<div class="spine-segment"></div>' : ''}
-          <div class="node ${progress[node.id] ? 'done' : ''}" data-id="${node.id}">
-            <div class="node-check">
-              <svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="2,6 5,9 10,3"></polyline>
-              </svg>
-            </div>
-            <span class="node-title">${node.title}</span>
-          </div>
-        `).join('')}
-      </div>
-    `;
+  const baseGrid = document.createElement('div');
+  baseGrid.className = 'roadmap-grid';
 
-    roadmap.appendChild(trackEl);
+  baseData.tracks.forEach(track => {
+    baseGrid.appendChild(renderTrack(track));
   });
+
+  baseSection.appendChild(baseGrid);
+  roadmap.appendChild(baseSection);
+
+  // Custom section
+  if (hasCustom) {
+    const customSection = document.createElement('div');
+    customSection.className = 'roadmap-section';
+    customSection.innerHTML = '<div class="section-label">Your Roadmap</div>';
+
+    const customGrid = document.createElement('div');
+    customGrid.className = 'roadmap-grid';
+
+    customData.tracks.forEach(track => {
+      customGrid.appendChild(renderTrack(track));
+    });
+
+    customSection.appendChild(customGrid);
+    roadmap.appendChild(customSection);
+  }
 
   // Attach click handlers
   document.querySelectorAll('.node').forEach(el => {
@@ -60,6 +85,37 @@ function render() {
   });
 
   updateTotalProgress();
+}
+
+function renderTrack(track) {
+  const trackEl = document.createElement('div');
+  trackEl.className = 'track';
+
+  const doneCount = track.nodes.filter(n => progress[n.id]).length;
+  const totalCount = track.nodes.length;
+
+  trackEl.innerHTML = `
+    <div class="track-header">
+      <div class="track-title" style="color: ${track.color}">${track.title}</div>
+      <div class="track-desc">${track.description}</div>
+      <div class="track-progress">${doneCount} / ${totalCount}</div>
+    </div>
+    <div class="track-spine">
+      ${track.nodes.map((node, i) => `
+        ${i > 0 ? '<div class="spine-segment"></div>' : ''}
+        <div class="node ${progress[node.id] ? 'done' : ''}" data-id="${node.id}">
+          <div class="node-check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="2,6 5,9 10,3"></polyline>
+            </svg>
+          </div>
+          <span class="node-title">${node.title}</span>
+        </div>
+      `).join('')}
+    </div>
+  `;
+
+  return trackEl;
 }
 
 // --- Drawer ---

@@ -88,25 +88,37 @@ body {
   white-space: nowrap;
 }
 
-/* --- Roadmap grid --- */
+/* --- Roadmap layout --- */
 
 .roadmap {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 24px 80px;
 }
 
-@media (max-width: 900px) {
-  .roadmap {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.roadmap-section {
+  margin-bottom: 48px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px 0;
 }
 
 @media (max-width: 520px) {
-  .roadmap {
+  .roadmap-grid {
     grid-template-columns: 1fr;
   }
 }

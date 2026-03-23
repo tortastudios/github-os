@@ -15,6 +15,7 @@ Slash commands are defined in `.claude/commands/`:
 - `/write` -- Draft content in any format
 - `/review` -- Give feedback: 3 strengths, 3 improvements, next step
 - `/ship` -- Pre-launch checklist and deployment help
+- `/add-goal` -- Add a custom goal to the personal roadmap
 
 ## Skills
 

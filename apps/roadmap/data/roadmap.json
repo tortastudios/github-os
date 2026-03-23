@@ -25,45 +25,42 @@
           "tryIt": "Open the repo in your AI tool and type /setup. Or edit config.json on GitHub.com -- fill in every field."
         },
         {
+          "id": "build-manual",
+          "title": "Build your operating manual",
+          "description": "The /build-manual command asks 6 questions about your business and generates docs/operating-manual.md. This document serves double duty: it's a real business reference for humans, and it's the context layer that makes every AI tool connected to your repo smarter. From this point on, AI knows what you do, how you work, and where you need help.",
+          "resources": [],
+          "tryIt": "Run /build-manual in your AI tool. Answer the 6 questions about your business. Review the generated doc and edit anything that doesn't sound right."
+        },
+        {
           "id": "first-commit",
           "title": "Make your first commit",
-          "description": "After running /setup, your config.json has changed. Committing saves that change with a description of what you did and why. This is the core rhythm of GitHub: change something, describe the change, save it. Every commit is a point in time you can return to.",
+          "description": "After running /setup and /build-manual, your repo has real content. Committing saves those changes with a description of what you did and why. This is the core rhythm: change something, describe the change, save it. Every commit is a point in time you can return to.",
           "resources": [
             { "type": "official", "title": "Committing changes on GitHub.com", "url": "https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files" }
           ],
-          "tryIt": "If you edited config.json on GitHub.com, you already committed. If you used an AI tool locally, commit now with a message like: 'configure my OS with personal context'"
+          "tryIt": "Commit your config.json and operating manual with a message like: 'set up my OS and document how my business works'"
         },
         {
           "id": "try-a-command",
-          "title": "Try your first slash command",
-          "description": "Slash commands are quick actions your AI follows. Try /brainstorm or /plan with your 30-day goal. The AI reads your config.json, so it already knows your context. This is the first taste of how the OS makes AI useful.",
+          "title": "Try a slash command",
+          "description": "Slash commands are quick actions your AI follows. Try /plan with your 30-day goal. The AI reads your config.json and operating manual, so it already has full context about your business. This is the payoff: you documented your business, and now AI is genuinely useful.",
           "resources": [
             { "type": "article", "title": "Available commands", "url": "https://github.com/tortastudios/github-os#commands" }
           ],
-          "tryIt": "Type: /plan [your 30-day goal from config.json]. See how the AI uses your context to give you a tailored plan."
-        },
-        {
-          "id": "understand-agents-md",
-          "title": "Understand agents.md and CLAUDE.md",
-          "description": "agents.md is the universal config that tells any AI tool how to behave in your repo. CLAUDE.md adds Claude-specific features on top. Together, they're like onboarding docs for your AI assistant. Edit them to change how AI helps you.",
-          "resources": [
-            { "type": "article", "title": "agents.md", "url": "https://github.com/tortastudios/github-os/blob/main/agents.md" },
-            { "type": "article", "title": "CLAUDE.md best practices", "url": "https://docs.anthropic.com/en/docs/claude-code/memory#claudemd" }
-          ],
-          "tryIt": "Open agents.md and add one line under 'Behavior' that reflects how you like to work. Example: '- When I ask for help with writing, draft the full piece instead of an outline.'"
+          "tryIt": "Type: /plan [your 30-day goal from config.json]. Then try: /brainstorm ideas to solve [the pain point from your operating manual]"
         }
       ]
     },
     {
-      "id": "daily-use",
-      "title": "Run Your Day",
-      "description": "Start operating from your OS",
+      "id": "operate",
+      "title": "Start Operating",
+      "description": "Use your OS for real work",
       "color": "#3b82f6",
       "nodes": [
         {
           "id": "create-issue",
           "title": "Track a task with GitHub Issues",
-          "description": "GitHub Issues is your built-in task tracker. Each issue is a task, idea, or question with its own discussion thread. Your repo comes with templates for ideas, tasks, and questions so you don't start from a blank page. Better than sticky notes, cheaper than project management software.",
+          "description": "GitHub Issues is your built-in task tracker. Each issue is a task, idea, or question with its own discussion thread. Your repo comes with templates for ideas, tasks, and questions so you don't start from a blank page.",
           "resources": [
             { "type": "official", "title": "About issues", "url": "https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues" }
           ],
@@ -71,10 +68,10 @@
         },
         {
           "id": "first-journal",
-          "title": "Write your first journal entry",
-          "description": "The journal/ folder is your thinking space. Write daily notes, weekly reflections, ideas, lessons learned. There are no rules -- it's for you. The value builds over time: searchable, versioned, always accessible. Your AI tools can also read it for context.",
+          "title": "Write a journal entry",
+          "description": "The journal/ folder is your thinking space. Write daily notes, weekly reflections, ideas, lessons learned. The value builds over time: searchable, versioned, always accessible. Your AI tools can also read it for context on what you've been thinking about.",
           "resources": [],
-          "tryIt": "Create a file called journal/week-1.md. Write 3 sentences about what you're working on this week and what you hope to accomplish."
+          "tryIt": "Create journal/week-1.md. Write 3-5 sentences about what you're working on this week and what you want to figure out."
         },
         {
           "id": "document-decision",
@@ -83,153 +80,23 @@
           "resources": [
             { "type": "article", "title": "Architecture decision records", "url": "https://adr.github.io/" }
           ],
-          "tryIt": "Copy docs/decisions/000-template.md to docs/decisions/001-chose-github-os.md. Fill it out: why did you decide to use GitHub OS? What alternatives did you consider?"
+          "tryIt": "Copy docs/decisions/000-template.md to docs/decisions/001-chose-github-os.md. Fill it out: why did you decide to use GitHub OS?"
         },
         {
           "id": "write-sop",
           "title": "Document a process you repeat",
-          "description": "If you do something more than twice, write it down. SOPs (Standard Operating Procedures) go in docs/sops/. Could be how you onboard a client, how you publish content, how you handle support requests. Written in markdown, versioned automatically.",
+          "description": "If you do something more than twice, write it down. SOPs go in docs/sops/. Could be how you onboard a client, publish content, handle invoices, or run a weekly review. Written in markdown, versioned automatically, readable by AI.",
           "resources": [
             { "type": "article", "title": "Markdown guide", "url": "https://www.markdownguide.org/" }
           ],
-          "tryIt": "Use /write to draft an SOP: '/write an SOP for [something I do regularly]'. Save it to docs/sops/."
-        },
-        {
-          "id": "project-board",
-          "title": "Set up a Project board",
-          "description": "GitHub Projects gives you a kanban board connected to your issues. Drag tasks between To Do, In Progress, and Done. It's free Trello, built into GitHub, and stays in sync with your issues automatically.",
-          "resources": [
-            { "type": "official", "title": "About Projects", "url": "https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects" }
-          ],
-          "tryIt": "Go to your repo's Projects tab, create a new Board project, and add your existing issues to it. Drag one to 'In Progress'."
+          "tryIt": "Ask your AI tool: 'Help me write an SOP for [something I do regularly]. Save it to docs/sops/.' Review the output, edit it, commit."
         },
         {
           "id": "use-review",
           "title": "Get feedback with /review",
-          "description": "The /review command gives you structured feedback on anything -- a document, a plan, a piece of writing, code. It returns 3 strengths, 3 improvements, and a suggested next step. Use it before you share or ship anything.",
+          "description": "The /review command gives you structured feedback on anything: a document, a plan, a piece of writing. It returns 3 strengths, 3 improvements, and a suggested next step. Use it before you share or ship anything.",
           "resources": [],
-          "tryIt": "Pick something you've written in your repo (a journal entry, SOP, or decision log) and run: /review [filename]"
-        }
-      ]
-    },
-    {
-      "id": "build-extend",
-      "title": "Build & Extend",
-      "description": "Add your own tools and automations",
-      "color": "#10b981",
-      "nodes": [
-        {
-          "id": "deploy-roadmap",
-          "title": "Deploy your roadmap site",
-          "description": "Your repo includes a roadmap site in apps/roadmap/ and a GitHub Action that auto-deploys it. Enable GitHub Pages in your repo settings and your progress dashboard goes live at yourname.github.io/github-os. Every push to apps/roadmap/ triggers a fresh deploy.",
-          "resources": [
-            { "type": "official", "title": "GitHub Pages quickstart", "url": "https://docs.github.com/en/pages/quickstart" }
-          ],
-          "tryIt": "Go to Settings > Pages. Set source to 'GitHub Actions'. Push any change to apps/roadmap/ and watch it deploy. Visit yourname.github.io/github-os to see it live."
-        },
-        {
-          "id": "add-app",
-          "title": "Add your first project to apps/",
-          "description": "The apps/ folder is where your projects live. Each one gets its own folder with its own README. Could be a landing page, a tool, a side project, a client site. The repo structure keeps everything organized in one place.",
-          "resources": [],
-          "tryIt": "Create apps/my-first-project/README.md. Write one sentence about what the project is. Use /plan to break it into phases."
-        },
-        {
-          "id": "create-workflow",
-          "title": "Create a workflow template",
-          "description": "Workflows are documented processes in workflows/. Your repo includes templates for content pipelines and project kickoffs. Create your own for any process you repeat: client onboarding, weekly review, content publishing, sales follow-up.",
-          "resources": [],
-          "tryIt": "Use /write to draft a workflow: '/write a workflow template for [your repeatable process]'. Save to workflows/templates/."
-        },
-        {
-          "id": "custom-command",
-          "title": "Create a custom slash command",
-          "description": "Commands are just markdown files in .claude/commands/. Create a new .md file, write instructions for what it should do, and it becomes available as a slash command. No code needed. Ideas: /daily for a morning standup, /reflect for end-of-week review, /pitch for elevator pitch practice.",
-          "resources": [
-            { "type": "article", "title": "Custom slash commands", "url": "https://docs.anthropic.com/en/docs/claude-code/slash-commands" }
-          ],
-          "tryIt": "Create .claude/commands/daily.md with instructions like: 'Summarize my recent commits, check open issues, and suggest what I should focus on today.'"
-        },
-        {
-          "id": "first-skill",
-          "title": "Create a custom skill",
-          "description": "Skills are deeper than commands. A skill teaches your AI how to do something specific -- like reviewing content against your brand guidelines, generating meeting agendas, or following your writing style. Each skill is a SKILL.md file in a folder.",
-          "resources": [
-            { "type": "article", "title": "Claude Code skills", "url": "https://docs.anthropic.com/en/docs/claude-code/skills" }
-          ],
-          "tryIt": "Create .claude/skills/my-style/SKILL.md with instructions for how you like to write. Include examples of your voice, words you use, words you avoid."
-        },
-        {
-          "id": "github-action",
-          "title": "Set up a GitHub Action",
-          "description": "Actions are automations triggered by events in your repo. Push code? Auto-deploy. Create an issue? Send a notification. Your repo already has one (deploy-roadmap.yml). Read it to understand the pattern, then create your own.",
-          "resources": [
-            { "type": "official", "title": "GitHub Actions quickstart", "url": "https://docs.github.com/en/actions/quickstart" },
-            { "type": "article", "title": "Awesome GitHub Actions", "url": "https://github.com/sdras/awesome-actions" }
-          ],
-          "tryIt": "Read .github/workflows/deploy-roadmap.yml to understand the structure. Then search the GitHub Actions marketplace for an automation that would save you time."
-        }
-      ]
-    },
-    {
-      "id": "share-scale",
-      "title": "Share & Scale",
-      "description": "Go multiplayer and go public",
-      "color": "#8b5cf6",
-      "nodes": [
-        {
-          "id": "branches",
-          "title": "Use branches for experiments",
-          "description": "A branch is a copy of your project where you can try things without affecting the main version. Want to reorganize your docs? Try it on a branch. If it works, merge it in. If not, delete the branch. No harm done.",
-          "resources": [
-            { "type": "official", "title": "About branches", "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches" }
-          ],
-          "tryIt": "Create a branch called 'experiment'. Make a change, commit it, then view the branch on GitHub to see how it differs from main."
-        },
-        {
-          "id": "pull-requests",
-          "title": "Collaborate with Pull Requests",
-          "description": "Pull Requests are how changes get reviewed before merging into main. Even solo, they create a record of what changed and why. For teams, they're essential. No one changes the main branch without review.",
-          "resources": [
-            { "type": "official", "title": "About pull requests", "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests" }
-          ],
-          "tryIt": "From your experiment branch, open a Pull Request. Write a description of what you changed and why. Merge it when you're satisfied."
-        },
-        {
-          "id": "share-skills",
-          "title": "Share your skills and commands",
-          "description": "Skills and commands are just files. Share them by linking to your repo, or create a separate template repo of your best skills. Others can copy them into their own OS. This is how the ecosystem grows.",
-          "resources": [
-            { "type": "official", "title": "Template repositories", "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository" }
-          ],
-          "tryIt": "Pick your best custom command or skill. Share the GitHub link with someone who has their own OS repo and help them add it."
-        },
-        {
-          "id": "custom-domain",
-          "title": "Add a custom domain",
-          "description": "Instead of yourname.github.io, point your own domain at your GitHub Pages site. Free hosting with your own URL. Makes your roadmap or any app you build look professional.",
-          "resources": [
-            { "type": "official", "title": "Custom domains for GitHub Pages", "url": "https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site" }
-          ],
-          "tryIt": "If you own a domain, go to Settings > Pages > Custom domain and follow the DNS setup instructions."
-        },
-        {
-          "id": "issue-templates",
-          "title": "Customize your issue templates",
-          "description": "Your repo came with templates for ideas, tasks, and questions. Customize them for your actual workflow, or add new ones. If you onboard clients, make a 'New client' template. If you produce content, make a 'Content brief' template.",
-          "resources": [
-            { "type": "official", "title": "Configuring issue templates", "url": "https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository" }
-          ],
-          "tryIt": "Open .github/ISSUE_TEMPLATE/ and edit one of the existing templates, or create a new one that fits your workflow."
-        },
-        {
-          "id": "invite-collaborator",
-          "title": "Invite a collaborator",
-          "description": "When you're ready to go multiplayer, invite someone to your repo. They can create issues, submit PRs, and use the same skills and commands. This is how a personal OS becomes a team OS.",
-          "resources": [
-            { "type": "official", "title": "Inviting collaborators", "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository" }
-          ],
-          "tryIt": "Go to Settings > Collaborators and invite someone you work with. Create an issue and assign it to them."
+          "tryIt": "Pick something you've written in your repo and run: /review [filename]. Try it on your operating manual or your first SOP."
         }
       ]
     }

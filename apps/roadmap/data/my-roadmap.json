@@ -1,0 +1,122 @@
+{
+  "_instructions": "Add your own tracks and goals here. The site renders these alongside the base roadmap. Each track needs an id, title, description, color, and an array of nodes. Each node needs an id, title, and description. Resources and tryIt are optional. Use /add-goal to add nodes with AI assistance.",
+  "tracks": [
+    {
+      "id": "customize",
+      "title": "Make It Mine",
+      "description": "Customize your OS for how you work",
+      "color": "#8b5cf6",
+      "nodes": [
+        {
+          "id": "custom-agents-md",
+          "title": "Personalize agents.md",
+          "description": "Edit agents.md to change how AI behaves in your repo. Add rules specific to your work style, your industry, or your preferences.",
+          "resources": [
+            { "type": "article", "title": "agents.md in your repo", "url": "https://github.com/tortastudios/github-os/blob/main/agents.md" }
+          ],
+          "tryIt": "Open agents.md and add a line under Behavior. Example: 'When I ask about pricing, reference my operating manual and suggest options based on my revenue model.'"
+        },
+        {
+          "id": "custom-command",
+          "title": "Create a custom command",
+          "description": "Commands are markdown files in .claude/commands/. Write instructions, save as .md, and it becomes a slash command. No code needed.",
+          "resources": [],
+          "tryIt": "Ask your AI tool: 'Create a /weekly command that reviews my journal entries from this week, checks my open issues, and suggests what to focus on next week.'"
+        },
+        {
+          "id": "custom-skill",
+          "title": "Create a custom skill",
+          "description": "Skills teach AI deeper capabilities. Create a SKILL.md file with instructions for something you want AI to consistently do well, like reviewing content in your brand voice or generating client proposals.",
+          "resources": [],
+          "tryIt": "Ask your AI tool: 'Create a skill that reviews my writing and checks it matches [describe your style]. Save it to .claude/skills/my-voice/SKILL.md.'"
+        },
+        {
+          "id": "install-skill",
+          "title": "Install a community skill",
+          "description": "Browse skills built by others at skills.sh. Install with one command. They drop into your .claude/skills/ folder and AI picks them up automatically.",
+          "resources": [
+            { "type": "article", "title": "Browse skills", "url": "https://skills.sh/" }
+          ],
+          "tryIt": "Run: npx skills find [something you need help with]"
+        }
+      ]
+    },
+    {
+      "id": "collaborate",
+      "title": "Go Multiplayer",
+      "description": "Work with others through your OS",
+      "color": "#10b981",
+      "nodes": [
+        {
+          "id": "branches",
+          "title": "Use branches for experiments",
+          "description": "A branch lets you try things without affecting the main version. If the experiment works, merge it. If not, delete the branch.",
+          "resources": [
+            { "type": "official", "title": "About branches", "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches" }
+          ],
+          "tryIt": "Ask your AI tool: 'Create a branch called experiment, make a change to my operating manual, then walk me through how to merge it back.'"
+        },
+        {
+          "id": "pull-requests",
+          "title": "Review changes with Pull Requests",
+          "description": "PRs are how changes get reviewed before merging. They show exactly what changed, line by line. For teams, they prevent the 'someone overwrote my changes' problem that plagues Google Drive.",
+          "resources": [
+            { "type": "official", "title": "About pull requests", "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests" }
+          ],
+          "tryIt": "Ask your AI tool: 'Walk me through creating a pull request for my experiment branch. Explain what I'm seeing in the diff view.'"
+        },
+        {
+          "id": "invite-collaborator",
+          "title": "Invite a collaborator",
+          "description": "Add someone to your repo. They can create issues, submit PRs, and use the same commands and skills. Your personal OS becomes a team OS.",
+          "resources": [
+            { "type": "official", "title": "Inviting collaborators", "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository" }
+          ],
+          "tryIt": "Go to Settings > Collaborators and invite someone you work with."
+        }
+      ]
+    },
+    {
+      "id": "ship",
+      "title": "Build & Ship",
+      "description": "Put things on the internet",
+      "color": "#ef4444",
+      "nodes": [
+        {
+          "id": "deploy-roadmap",
+          "title": "Deploy your roadmap site",
+          "description": "Your repo includes a roadmap site and a GitHub Action that auto-deploys it. Enable GitHub Pages and your progress dashboard goes live.",
+          "resources": [
+            { "type": "official", "title": "GitHub Pages", "url": "https://docs.github.com/en/pages/quickstart" }
+          ],
+          "tryIt": "Ask your AI tool: 'Help me enable GitHub Pages for this repo and deploy the roadmap site.'"
+        },
+        {
+          "id": "add-app",
+          "title": "Start a project in apps/",
+          "description": "The apps/ folder is where your projects live. Each gets its own folder. Could be a landing page, a tool, a client site, or anything you build.",
+          "resources": [],
+          "tryIt": "Ask your AI tool: 'Create a new project in apps/ for [describe your project]. Set up a README and help me plan the first version.'"
+        },
+        {
+          "id": "custom-domain",
+          "title": "Add a custom domain",
+          "description": "Point your own domain at your GitHub Pages site instead of using the default yourname.github.io URL.",
+          "resources": [
+            { "type": "official", "title": "Custom domains", "url": "https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site" }
+          ],
+          "tryIt": "Ask your AI tool: 'Walk me through setting up a custom domain for my GitHub Pages site.'"
+        },
+        {
+          "id": "github-action",
+          "title": "Set up an automation",
+          "description": "GitHub Actions run automatically when things happen in your repo. Your repo already has one for deploying the roadmap site. Add more for whatever you need.",
+          "resources": [
+            { "type": "official", "title": "GitHub Actions", "url": "https://docs.github.com/en/actions/quickstart" }
+          ],
+          "tryIt": "Ask your AI tool: 'What GitHub Actions would be useful for my business? Look at my operating manual for context and suggest 2-3 automations.'"
+        }
+      ]
+    }
+  ]
+}
