@@ -8,17 +8,22 @@ Before you start, install these (all free):
 
 1. **GitHub account** -- [sign up here](https://github.com/signup)
 2. **Git** -- [download here](https://git-scm.com/downloads). This is the engine that powers GitHub on your machine.
-3. **GitHub Desktop** -- [download here](https://desktop.github.com/). Visual app for Git. No terminal needed.
-4. **An AI tool** that can read local files -- [Claude Desktop](https://claude.ai/download), [Claude Code](https://docs.anthropic.com/en/docs/claude-code), or [Cursor](https://cursor.sh/)
+3. **An AI tool** that can read local files -- [Claude Desktop](https://claude.ai/download), [Claude Code](https://docs.anthropic.com/en/docs/claude-code), or [Cursor](https://cursor.sh/)
 
 ## Quick Start
 
 1. Click **"Use this template"** on this repo page -- this creates your own copy under your GitHub account
-2. Open **GitHub Desktop**, sign in, and clone your new repo (File > Clone Repository)
-3. Open the repo folder in your AI tool
-4. Say: *"Help me set up my OS"* (or run `/setup` in Claude Code)
-5. Say: *"Help me build my operating manual"* (or run `/build-manual` in Claude Code)
-6. Commit your changes in GitHub Desktop with a message like: *"set up my OS and document my business"*
+2. Clone your new repo by opening a terminal and running:
+   ```
+   git clone https://github.com/YOUR-USERNAME/github-os.git
+   ```
+   Replace `YOUR-USERNAME` with your GitHub username. This downloads the repo to your computer.
+3. Open the `github-os` folder in your AI tool
+4. Say: *"Help me set up my OS"*
+5. Say: *"Help me build my operating manual"*
+6. When you're ready to save, say: *"Commit my changes with the message: set up my OS and document my business"*
+
+That last step saves your work to GitHub with a description of what changed. You'll do this every time you make meaningful changes.
 
 ## What's in the Box
 
@@ -35,18 +40,18 @@ scripts/        Health checks and utilities.
 
 ## Commands and Prompts
 
-Every action works two ways: as a **slash command** in Claude Code, or as a **plain English prompt** in any AI tool.
+Every action works two ways: as a **plain English prompt** in any AI tool, or as a **slash command** in Claude Code.
 
-| Slash command | Or just say... | What it does |
-|--------------|----------------|-------------|
-| `/setup` | *"Help me set up my OS"* | Interactive interview that configures your OS |
-| `/build-manual` | *"Help me build my operating manual"* | Generates your business context doc -- the file that makes AI useful |
-| `/plan` | *"Help me plan [goal]"* | Break any goal into actionable steps |
-| `/brainstorm` | *"Brainstorm ideas for [topic]"* | Generate ideas scored by effort and impact |
-| `/write` | *"Write a [type] about [topic]"* | Draft content -- blogs, docs, social, SOPs |
-| `/review` | *"Review [file or idea]"* | Structured feedback: 3 strengths, 3 improvements, next step |
-| `/ship` | *"Help me ship [project]"* | Pre-launch checklist and deploy guidance |
-| `/add-goal` | *"Add a goal to my roadmap"* | Add a custom goal to your personal roadmap |
+| Say this to your AI tool | Or in Claude Code | What it does |
+|--------------------------|-------------------|-------------|
+| *"Help me set up my OS"* | `/setup` | Interactive interview that configures your OS |
+| *"Help me build my operating manual"* | `/build-manual` | Generates your business context doc -- the file that makes AI useful |
+| *"Help me plan [goal]"* | `/plan` | Break any goal into actionable steps |
+| *"Brainstorm ideas for [topic]"* | `/brainstorm` | Generate ideas scored by effort and impact |
+| *"Write a [type] about [topic]"* | `/write` | Draft content -- blogs, docs, social, SOPs |
+| *"Review [file or idea]"* | `/review` | Structured feedback: 3 strengths, 3 improvements, next step |
+| *"Help me ship [project]"* | `/ship` | Pre-launch checklist and deploy guidance |
+| *"Add a goal to my roadmap"* | `/add-goal` | Add a custom goal to your personal roadmap |
 
 ## How It Works
 
@@ -68,17 +73,23 @@ Every action works two ways: as a **slash command** in Claude Code, or as a **pl
 - Say *"Add a goal to my roadmap"* to customize your progress tracker
 - Install community skills with `npx skills find [query]`
 
-## Best Practices
+## Saving Your Work
+
+Every time you make meaningful changes, save them to GitHub:
+
+```
+git add -A
+git commit -m "describe what you changed"
+git push
+```
+
+Or just ask your AI tool: *"Commit my changes with the message: [what you did]"*
 
 **Commit messages matter.** Write what you changed and why. *"Update pricing model after Q1 review"* tells future-you something useful. *"Update file"* does not.
 
-**Never commit secrets.** API keys, passwords, tokens -- keep them out of your repo. Use `.env` files (already in .gitignore) for sensitive values. The health check script (`bash scripts/check.sh`) scans for common mistakes.
-
-**Commit at checkpoints.** Finished an SOP? Commit. Updated your operating manual? Commit. Each commit is a save point you can return to.
+**Never commit secrets.** API keys, passwords, tokens -- keep them out of your repo. Use `.env` files (already in .gitignore) for sensitive values.
 
 **One change per commit.** Don't bundle unrelated changes. If you updated your operating manual AND created a new workflow, that's two commits.
-
-**Review before merging.** When collaborating, use Pull Requests. They create a record of what changed and why, and give others a chance to review.
 
 ## License
 

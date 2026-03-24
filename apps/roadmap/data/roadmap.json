@@ -9,7 +9,7 @@
         {
           "id": "explore-structure",
           "title": "Explore the repo structure",
-          "description": "Before changing anything, look around. Open the repo in GitHub Desktop or on GitHub.com and understand what each folder is for. apps/ is for projects, docs/ is for business knowledge, workflows/ is for processes, journal/ is for notes.",
+          "description": "Before changing anything, look around. Open the repo folder on your computer or on GitHub.com and understand what each folder is for. apps/ is for projects, docs/ is for business knowledge, workflows/ is for processes, journal/ is for notes.",
           "resources": [
             { "type": "article", "title": "GitHub OS README", "url": "https://github.com/tortastudios/github-os#whats-in-the-box" }
           ],
@@ -34,11 +34,11 @@
         {
           "id": "first-commit",
           "title": "Make your first commit",
-          "description": "Your repo now has real content. Committing is like saving a file, but smarter -- it records what changed and why. Open GitHub Desktop, review your changes, write a short message describing what you did, and click Commit. This is the core rhythm you'll use from now on.",
+          "description": "Your repo now has real content. Committing is like saving a file, but smarter -- it records what changed and why. Ask your AI tool to commit for you, or use the three terminal commands: git add, git commit, git push. This is the core rhythm you'll use from now on.",
           "resources": [
-            { "type": "official", "title": "Getting started with GitHub Desktop", "url": "https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop" }
+            { "type": "official", "title": "Saving changes with Git", "url": "https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository" }
           ],
-          "tryIt": "In GitHub Desktop, you'll see your changed files listed. Write a commit message like: \"set up my OS and document how my business works\". Click Commit, then Push."
+          "tryIt": "Say to your AI tool: \"Commit my changes with the message: set up my OS and document how my business works\". Or in a terminal: git add -A && git commit -m \"set up my OS\" && git push"
         },
         {
           "id": "try-a-command",

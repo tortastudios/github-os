@@ -1,27 +1,32 @@
 # Make Your First Commit
 
-After running setup (or editing config.json by hand), your file has changed but those changes aren't saved to your project history yet. Committing captures what changed and why. This is the core rhythm of GitHub: change, describe, save.
+After setting up your OS and building your operating manual, your repo has real content. Committing saves those changes to your project history with a description of what you did. Think of it like saving a file, but it also records *why* it changed.
 
 ## How to do it
 
-1. If you edited config.json on GitHub.com, you already committed -- GitHub prompted you to describe the change when you saved
-2. If you used an AI tool locally, open your terminal or GitHub Desktop
-3. Stage the changed file (config.json)
-4. Write a short message like "configure my OS with personal context"
-5. Commit
+1. Ask your AI tool: "Commit my changes with the message: set up my OS and document my business"
+2. Or in a terminal, run these three commands:
+   ```
+   git add -A
+   git commit -m "set up my OS and document my business"
+   git push
+   ```
+3. Check your repo on GitHub.com -- you'll see the updated files and your commit message
 
 ## Try it
 
 ```
-If you haven't committed yet, do it now. Your message should describe the change:
-"configure my OS with personal context"
+Say to your AI tool: "Commit my changes with the message: set up my OS and document my business"
+
+Or run: git add -A && git commit -m "set up my OS and document my business" && git push
 ```
 
 ## Resources
 
-- [Committing changes to your project](https://docs.github.com/en/pull-requests/committing-changes-to-your-project)
+- [Pushing commits to GitHub](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository)
 
 ## Tips
 
-- Write commit messages that explain **why**, not just what. "Configure OS with my goals and preferences" beats "Update config.json".
+- Write commit messages that explain **why**, not just what. "Update pricing model after Q1 review" beats "update file."
 - Commit often. Small, frequent commits are easier to understand than one giant change.
+- `git add -A` stages all changes. `git commit -m "message"` saves them locally. `git push` uploads them to GitHub.
