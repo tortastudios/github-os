@@ -6,22 +6,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg: #26201d;
-  --bg-light: #2e2723;
-  --surface: #342e29;
-  --border: rgba(230, 231, 215, 0.1);
-  --border-strong: rgba(230, 231, 215, 0.18);
-  --text: #e6e7d7;
-  --text-muted: #a8a89a;
-  --text-dim: #7a7a6e;
-  --node-bg: #2e2723;
-  --node-hover: #3a322d;
-  --node-done: rgba(255, 60, 2, 0.08);
-  --node-done-border: #ff3c02;
-  --check: #ff3c02;
-  --spine: rgba(230, 231, 215, 0.12);
-  --accent: #ff3c02;
-  --accent-glow: rgba(255, 60, 2, 0.15);
+  --bg: #e0e1d0;
+  --bg-light: #d6d7c5;
+  --surface: #e6e7d7;
+  --border: rgba(38, 32, 29, 0.1);
+  --border-strong: rgba(38, 32, 29, 0.18);
+  --text: #26201d;
+  --text-muted: #55504d;
+  --text-dim: #7a756f;
+  --node-bg: #e6e7d7;
+  --node-hover: #d6d7c5;
+  --node-done: rgba(255, 60, 2, 0.06);
+  --node-done-border: #e03300;
+  --check: #e03300;
+  --spine: rgba(38, 32, 29, 0.12);
+  --accent: #e03300;
+  --accent-glow: rgba(255, 60, 2, 0.1);
   --drawer-width: 460px;
 
   --font-heading: 'Space Grotesk', sans-serif;
@@ -271,7 +271,7 @@ body {
 .drawer-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(38, 32, 29, 0.7);
+  background: rgba(38, 32, 29, 0.3);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   opacity: 0;
@@ -429,7 +429,7 @@ body {
 }
 
 .guide-content pre {
-  background: var(--bg);
+  background: var(--bg-light);
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 14px 16px;
@@ -450,7 +450,7 @@ body {
 .guide-content .inline-code {
   font-family: var(--font-mono);
   font-size: 12px;
-  background: var(--bg);
+  background: var(--bg-light);
   border: 1px solid var(--border);
   border-radius: 3px;
   padding: 1px 6px;
@@ -510,10 +510,10 @@ body {
   white-space: nowrap;
 }
 
-.resource-badge.official { background: rgba(255, 60, 2, 0.1); color: #ff6233; }
-.resource-badge.article { background: rgba(230, 231, 215, 0.08); color: var(--text-muted); }
-.resource-badge.video { background: rgba(255, 60, 2, 0.06); color: #ff8c66; }
-.resource-badge.course { background: rgba(230, 231, 215, 0.06); color: var(--text-dim); }
+.resource-badge.official { background: rgba(224, 51, 0, 0.1); color: #d63400; }
+.resource-badge.article { background: rgba(38, 32, 29, 0.06); color: var(--text-muted); }
+.resource-badge.video { background: rgba(224, 51, 0, 0.06); color: #d63400; }
+.resource-badge.course { background: rgba(38, 32, 29, 0.04); color: var(--text-dim); }
 
 .resource-link {
   color: var(--text);
