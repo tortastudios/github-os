@@ -4,6 +4,7 @@
 **Format:** Guided, hands-on
 **Audience:** Business operators, creators, vibe coders. Comfortable with AI tools. New to GitHub.
 **Deliverable:** Everyone leaves with a configured GitHub OS repo and a personalized operating manual.
+**Structure:** 47 min guided content + 13 min Q&A
 
 ---
 
@@ -19,7 +20,7 @@ Provide a short email/message with these three steps and links. No other setup n
 
 ## Agenda
 
-### 0:00 - 0:08 | Why GitHub for your business
+### 0:00 - 0:06 | Why GitHub for your business
 
 **Goal:** Answer the fundamental question before touching anything.
 
@@ -41,11 +42,11 @@ The real pitch:
 
 > "AI tools are built to work with GitHub. When your business docs live in a repo, AI can read everything -- your processes, your decisions, your content -- and actually help you. That's what we're setting up today."
 
-Don't belabor this. 8 minutes max. Get to the hands-on.
+Don't belabor this. 6 minutes. Get to the hands-on.
 
 ---
 
-### 0:08 - 0:15 | Use the template and clone
+### 0:06 - 0:13 | Use the template and clone
 
 **Goal:** Everyone has a local copy of the repo.
 
@@ -65,7 +66,7 @@ Replace YOUR-USERNAME with their GitHub username. Walk through this live. Help a
 
 ---
 
-### 0:15 - 0:20 | Explore the structure
+### 0:13 - 0:16 | Explore the structure
 
 **Goal:** Orientation before they change anything.
 
@@ -82,7 +83,7 @@ Frame it: "Think of this like your computer's folder structure, but it's also th
 
 ---
 
-### 0:20 - 0:22 | Configure your OS
+### 0:16 - 0:18 | Configure your OS
 
 **Goal:** Everyone personalizes config.json.
 
@@ -96,7 +97,7 @@ The AI runs a 5-question interview. Name, project, stage, 30-day goal, communica
 
 ---
 
-### 0:22 - 0:35 | Build the operating manual
+### 0:18 - 0:31 | Build the operating manual
 
 **Goal:** This is the core deliverable. Everyone creates their business context document.
 
@@ -123,7 +124,7 @@ Give this the full 13 minutes. Don't rush it.
 
 ---
 
-### 0:35 - 0:38 | Commit
+### 0:31 - 0:34 | Commit
 
 **Goal:** Save their work to GitHub.
 
@@ -145,7 +146,7 @@ Quick contrast: "In Google Drive, a file just silently changes. In GitHub, every
 
 ---
 
-### 0:38 - 0:43 | See the payoff
+### 0:34 - 0:39 | See the payoff
 
 **Goal:** Prove the AI context loop works.
 
@@ -167,70 +168,65 @@ The AI responds with personalized, context-aware answers because it read their c
 
 ---
 
-### 0:43 - 0:48 | Collaboration basics (demo, not hands-on)
+### 0:39 - 0:42 | Collaboration basics (demo, not hands-on)
 
-**Goal:** Plant the seed for multiplayer GitHub.
+**Goal:** Plant the seed for multiplayer GitHub. 3 minutes, 3 concepts.
 
-Quick demo from your screen:
+**Branches:** "A branch lets you try things without breaking the original. If it works, merge it. If not, delete it."
 
-**Branches:** "A branch is a copy of your project where you try things without breaking the original. If the experiment works, merge it. If not, delete it."
+**Pull Requests:** "Someone wants to change something? They submit a PR. You review the exact changes before merging. No more silent overwrites."
 
-**Pull Requests:** "When someone wants to change something, they submit a PR. You review the exact changes, line by line, before merging. This is how you prevent the Google Drive problem where someone overwrites your work."
+**Merge conflicts:** "Two people edit the same thing? GitHub catches it and asks you to resolve it together. Google Drive just lets the last person win."
 
-**Merge conflicts:** "When two people edit the same thing, GitHub catches it and asks you to resolve it. Google Drive just silently overwrites. GitHub's approach is better -- it's a feature, not a bug."
-
-Don't make them do this. Just show it. They'll explore this when they're ready (it's in their custom roadmap).
+Demo from your screen. Don't make them do this -- it's in their custom roadmap for later.
 
 ---
 
-### 0:48 - 0:52 | What's next (with prompts)
+### 0:42 - 0:44 | What's next (prompts on screen)
 
-**Goal:** Show them the path forward without overwhelming.
+**Goal:** Show the path forward. Don't narrate -- put these on screen and let them read.
 
-Show 2-3 things they can do after the workshop, each as a prompt:
-
-**Write an SOP:**
 > "Help me write an SOP for [something I do regularly]. Save it to docs/sops/"
 
-**Create a custom command:**
-> "Create a command that reviews my journal entries from this week, checks my open issues, and suggests what to focus on next week. Save it to .claude/commands/weekly.md"
+> "Create a command that reviews my journal entries from this week and suggests what to focus on next week. Save it to .claude/commands/weekly.md"
 
-**Deploy the roadmap site:**
 > "Help me enable GitHub Pages for this repo and deploy the roadmap site"
 
-Frame it: "Every one of these is a prompt you give your AI tool. The repo structure tells AI where to put things. The operating manual gives it context. You just keep asking for what you need."
+One sentence: "Every one of these is a prompt. The repo tells AI where to put things. You just keep asking."
 
 ---
 
-### 0:52 - 0:55 | GitHub social
+### 0:44 - 0:47 | GitHub social + roadmap + close
 
-**Goal:** Build community around the repo.
+**Goal:** Community, homework, done.
 
 Everyone goes to the original repo (github.com/tortastudios/github-os):
+- **Star** the repo
+- **Watch** it
+- Post in **Discussions**: who you are, what you're building
 
-1. **Star** the repo (helps others find it)
-2. **Watch** the repo (get notified when we add new features)
-3. Post in **Discussions**: who you are and what you're building
+Then show the roadmap site:
 
-This takes 2 minutes and gives you a living thread of workshop alumni.
+> "You completed the first 5 nodes today. The next 5 are your homework this week. Below that, expansion tracks you can customize. Say 'Add a goal to my roadmap' to make it yours."
 
----
+Close:
 
-### 0:55 - 0:58 | The roadmap is your homework
-
-**Goal:** Give them a self-paced path forward.
-
-Show the roadmap site (tortastudios.github.io/github-os or their own deployed version):
-
-> "You completed the first 5 nodes today. The next 5 are things you can do this week -- track a task, write a journal entry, log a decision, document a process, get feedback. Work through them at your own pace. And below that, you'll see expansion tracks you can customize for your own goals."
-
-Mention `/add-goal` (or "say 'Add a goal to my roadmap'") for adding their own nodes.
+> "Your business has an operating system. Every commit makes it smarter. The repo is yours -- make it yours."
 
 ---
 
-### 0:58 - 1:00 | Close
+### 0:47 - 1:00 | Q&A
 
-> "Your business now has an operating system. Every time you commit, it gets a little smarter. Every document you add gives AI more context. The repo is yours -- make it yours."
+**Goal:** Let the room drive. Answer what they actually need.
+
+Common questions to prepare for:
+
+- **"Can I use this with [specific AI tool]?"** -- Yes, any tool that reads local files. agents.md is the universal config.
+- **"What if I break something?"** -- Git tracks every change. You can always go back. Show `git log` briefly.
+- **"Can I make my repo private?"** -- Yes. Settings > General > Danger Zone > Change visibility.
+- **"How do I get my team on this?"** -- Settings > Collaborators. They clone, they're in. PRs for review.
+- **"What about sensitive business info?"** -- Make the repo private. Never commit passwords or API keys. The .gitignore and health check script catch common mistakes.
+- **"Can I use this for [specific use case]?"** -- Probably yes. The structure is flexible. Ask your AI tool how to set it up.
 
 ---
 
@@ -260,15 +256,14 @@ Mention `/add-goal` (or "say 'Add a goal to my roadmap'") for adding their own n
 
 | Time | Duration | Section |
 |------|----------|---------|
-| 0:00 | 8 min | Why GitHub for your business |
-| 0:08 | 7 min | Use template + clone |
-| 0:15 | 5 min | Explore the structure |
-| 0:20 | 2 min | Configure your OS |
-| 0:22 | 13 min | Build the operating manual |
-| 0:35 | 3 min | Commit |
-| 0:38 | 5 min | See the payoff |
-| 0:43 | 5 min | Collaboration basics (demo) |
-| 0:48 | 4 min | What's next (prompts) |
-| 0:52 | 3 min | GitHub social |
-| 0:55 | 3 min | Roadmap as homework |
-| 0:58 | 2 min | Close |
+| 0:00 | 6 min | Why GitHub for your business |
+| 0:06 | 7 min | Use template + clone |
+| 0:13 | 3 min | Explore the structure |
+| 0:16 | 2 min | Configure your OS |
+| 0:18 | 13 min | Build the operating manual |
+| 0:31 | 3 min | Commit |
+| 0:34 | 5 min | See the payoff |
+| 0:39 | 3 min | Collaboration basics (demo) |
+| 0:42 | 2 min | What's next (prompts) |
+| 0:44 | 3 min | GitHub social + roadmap + close |
+| 0:47 | 13 min | Q&A |
