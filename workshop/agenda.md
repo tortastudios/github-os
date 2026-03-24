@@ -52,17 +52,21 @@ Don't belabor this. 6 minutes. Get to the hands-on.
 
 1. Show the repo on screen: github.com/tortastudios/github-os
 2. Everyone clicks **"Use this template"** -- creates their own copy
-3. Everyone opens a terminal and runs one command:
+3. Everyone opens a terminal (Terminal on Mac, Git Bash on Windows) and runs:
 
 ```
+cd Desktop
 git clone https://github.com/YOUR-USERNAME/github-os.git
 ```
 
-Replace YOUR-USERNAME with their GitHub username. Walk through this live. Help anyone stuck.
+Replace YOUR-USERNAME with their GitHub username. The `cd Desktop` puts the folder somewhere they can find it. Walk through this live. Help anyone stuck.
 
-4. Everyone opens the `github-os` folder in their AI tool
+4. Everyone opens the `github-os` folder in their AI tool:
+   - **Claude Code:** open terminal, `cd ~/Desktop/github-os && claude`
+   - **Cursor:** File > Open Folder > Desktop > github-os
+   - **Claude Desktop:** Start a new Project, click "Add content", add the github-os folder
 
-**Facilitator note:** This is the only terminal command in the entire workshop. After this, everything is through their AI tool. If someone can't get the clone working, pair them with a neighbor.
+**Facilitator note:** This is the only terminal command in the entire workshop. After this, everything is through their AI tool. If someone can't get the clone working, pair them with a neighbor. The Claude Desktop step is the one people might need help with -- walk the room.
 
 ---
 
@@ -121,6 +125,8 @@ AI generates `docs/operating-manual.md`. Everyone reviews it and edits anything 
 - Proof that documenting your business in GitHub has immediate payoff
 
 Give this the full 13 minutes. Don't rush it.
+
+**Facilitator note:** Claude Code and Cursor can save files directly to the repo. Claude Desktop may not be able to, depending on configuration. If someone's AI generates the manual but can't save it, tell them: "Copy the output. Open the github-os/docs folder on your Desktop. Create a new file called operating-manual.md. Paste." It takes 30 seconds and keeps everyone on track.
 
 ---
 
