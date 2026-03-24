@@ -343,6 +343,112 @@ function updateTotalProgress() {
 
   document.getElementById('total-progress').style.width = `${pct}%`;
   document.getElementById('total-label').textContent = `${done} / ${total} complete`;
+
+  if (done === total && total > 0) {
+    celebrate();
+  }
+}
+
+// --- Celebration ---
+
+let hasShownCelebration = false;
+
+function celebrate() {
+  if (hasShownCelebration) return;
+  hasShownCelebration = true;
+
+  // Confetti burst
+  const canvas = document.createElement('canvas');
+  canvas.id = 'confetti-canvas';
+  canvas.style.cssText = 'position:fixed;inset:0;z-index:200;pointer-events:none;';
+  document.body.appendChild(canvas);
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const ctx = canvas.getContext('2d');
+
+  const colors = ['#d63400', '#e0e1d0', '#26201d', '#ff6233', '#c2c3ab', '#f0f1e3'];
+  const particles = [];
+
+  for (let i = 0; i < 120; i++) {
+    particles.push({
+      x: window.innerWidth / 2 + (Math.random() - 0.5) * 200,
+      y: window.innerHeight / 2,
+      vx: (Math.random() - 0.5) * 16,
+      vy: Math.random() * -18 - 4,
+      size: Math.random() * 6 + 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rotation: Math.random() * 360,
+      rotationSpeed: (Math.random() - 0.5) * 12,
+      gravity: 0.25 + Math.random() * 0.15,
+      drag: 0.98,
+      opacity: 1,
+      shape: Math.random() > 0.5 ? 'rect' : 'circle'
+    });
+  }
+
+  let frame = 0;
+  function animateConfetti() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let alive = false;
+
+    particles.forEach(p => {
+      p.vy += p.gravity;
+      p.vx *= p.drag;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.rotation += p.rotationSpeed;
+
+      if (frame > 60) p.opacity -= 0.015;
+      if (p.opacity <= 0) return;
+      alive = true;
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation * Math.PI / 180);
+      ctx.globalAlpha = Math.max(0, p.opacity);
+      ctx.fillStyle = p.color;
+
+      if (p.shape === 'rect') {
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+      } else {
+        ctx.beginPath();
+        ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    });
+
+    frame++;
+    if (alive && frame < 180) {
+      requestAnimationFrame(animateConfetti);
+    } else {
+      canvas.remove();
+    }
+  }
+  requestAnimationFrame(animateConfetti);
+
+  // Show completion message
+  setTimeout(() => {
+    const toast = document.createElement('div');
+    toast.className = 'celebration-toast';
+    toast.innerHTML = `
+      <div class="celebration-icon">&#10024;</div>
+      <div class="celebration-text">
+        <strong>You've completed your roadmap.</strong>
+        <span>Your OS is fully operational. Now make it yours.</span>
+      </div>
+    `;
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => {
+      toast.classList.add('show');
+    });
+
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 500);
+    }, 5000);
+  }, 600);
 }
 
 // --- Event listeners ---

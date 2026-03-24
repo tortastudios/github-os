@@ -696,6 +696,56 @@ body {
   animation-delay: 0.2s;
 }
 
+/* --- Celebration toast --- */
+
+.celebration-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--ink);
+  color: var(--bg);
+  padding: 20px 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 210;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 12px 40px rgba(38, 32, 29, 0.25);
+  max-width: 440px;
+}
+
+.celebration-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.celebration-icon {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.celebration-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.celebration-text strong {
+  font-family: var(--f-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--surface-raised);
+}
+
+.celebration-text span {
+  font-size: 13px;
+  color: var(--ink-ghost);
+}
+
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
