@@ -1,19 +1,21 @@
-# Try Your First Slash Command
+# Ask Your AI Tool Something
 
-Slash commands are quick actions your AI follows. Try /brainstorm or /plan with your 30-day goal. The AI reads your config.json, so it already knows your context. This is the first taste of how the OS makes AI useful instead of generic.
+Your AI tool already knows your context from config.json and the operating manual. Just ask it what you need. This is the first taste of how the OS makes AI useful instead of generic.
 
 ## How to do it
 
 1. Open the repo in your AI tool
-2. Type `/plan` followed by your 30-day goal from config.json
+2. Try one of these prompts:
+   - "Help me make a plan for [your 30-day goal from config.json]"
+   - "Brainstorm ways to solve [a challenge you're facing]"
+   - "Write a first draft of [something you need to create]"
 3. Read the output -- notice how it uses your context
-4. Try another command like `/brainstorm` with a challenge you're facing
-5. Browse .claude/commands/ to see what other commands are available
+4. In Claude Code, these also work as slash commands (`/plan`, `/brainstorm`, `/write`)
 
 ## Try it
 
 ```
-Type: /plan [your 30-day goal from config.json]
+Say: "Help me make a plan for [your 30-day goal from config.json]"
 
 See how the AI uses your context to give you a tailored plan instead of generic advice.
 ```
@@ -24,5 +26,5 @@ See how the AI uses your context to give you a tailored plan instead of generic 
 
 ## Tips
 
-- Commands work because config.json gives the AI your context. The more specific your config, the better the output.
-- If a command's output isn't useful, try being more specific with your input.
+- These prompts work because config.json and your operating manual give the AI your context. The more specific those files are, the better the output.
+- If the output isn't useful, try being more specific with your input.

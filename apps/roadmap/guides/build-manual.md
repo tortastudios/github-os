@@ -5,7 +5,7 @@ Your operating manual is the single most valuable file in your OS. It tells ever
 ## How to do it
 
 1. Open your repo in any AI tool
-2. Run `/build-manual` (or say "help me build my operating manual")
+2. Say "Help me build my operating manual" (or run `/build-manual` in Claude Code)
 3. Answer the 6 questions about your business
 4. Review the generated doc at `docs/operating-manual.md`
 5. Edit anything that doesn't sound right
@@ -14,7 +14,7 @@ Your operating manual is the single most valuable file in your OS. It tells ever
 ## Try it
 
 ```
-Run /build-manual and answer the questions. When it's done, test it by asking:
+Say "Help me build my operating manual" (or run /build-manual in Claude Code) and answer the questions. When it's done, test it by asking:
 "Based on my operating manual, what should I focus on this week?"
 ```
 

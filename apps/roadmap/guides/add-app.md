@@ -6,14 +6,14 @@ The apps/ folder is where your projects live. Each one gets its own folder with 
 
 1. Create a new folder inside apps/ (like apps/my-first-project/)
 2. Add a README.md inside it describing what the project is
-3. Use /plan to break the project into phases if it's complex
+3. Say "Help me plan this project" to your AI tool (or run `/plan` in Claude Code) to break it into phases if it's complex
 4. Start building -- all project files go in this folder
 5. Commit as you go
 
 ## Try it
 
 ```
-Create apps/my-first-project/README.md. Write one sentence about what the project is. Use /plan to break it into phases.
+Create apps/my-first-project/README.md. Write one sentence about what the project is. Say "Help me plan this project" (or run /plan in Claude Code) to break it into phases.
 ```
 
 ## Resources

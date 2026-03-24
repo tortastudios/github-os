@@ -1,6 +1,6 @@
 # Make Your First Commit
 
-After running /setup (or editing config.json by hand), your file has changed but those changes aren't saved to your project history yet. Committing captures what changed and why. This is the core rhythm of GitHub: change, describe, save.
+After running setup (or editing config.json by hand), your file has changed but those changes aren't saved to your project history yet. Committing captures what changed and why. This is the core rhythm of GitHub: change, describe, save.
 
 ## How to do it
 

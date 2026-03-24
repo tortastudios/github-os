@@ -1,5 +1,5 @@
 {
-  "_instructions": "Add your own tracks and goals here. The site renders these alongside the base roadmap. Each track needs an id, title, description, color, and an array of nodes. Each node needs an id, title, and description. Resources and tryIt are optional. Use /add-goal to add nodes with AI assistance.",
+  "_instructions": "Add your own tracks and goals here. The site renders these alongside the base roadmap. Each track needs an id, title, description, color, and an array of nodes. Each node needs an id, title, and description. Resources and tryIt are optional. Say 'Add a goal to my roadmap' to your AI tool (or run /add-goal in Claude Code).",
   "tracks": [
     {
       "id": "customize",
