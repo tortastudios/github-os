@@ -11,10 +11,12 @@
 ## Pre-work (sent to attendees in advance)
 
 1. Create a GitHub account at github.com/signup
-2. Install Git from git-scm.com/downloads
+2. Install Git from git-scm.com/downloads (Windows users: accept all default options during install -- this also installs Git Bash, the terminal you'll use)
 3. Install an AI tool that reads local files: Claude Desktop, Claude Code, or Cursor
 
 Provide a short email/message with these three steps and links. No other setup needed.
+
+**Facilitator note on Windows:** The Git installer on Windows has ~8 screens of options. Tell attendees to accept all defaults. The important thing it installs is Git Bash -- that's their terminal for the one command they'll run. If someone accidentally uses CMD or PowerShell, the git clone command still works, but `cd Desktop` may behave differently. Git Bash is the safe path.
 
 ---
 
@@ -62,7 +64,7 @@ git clone https://github.com/YOUR-USERNAME/github-os.git
 Replace YOUR-USERNAME with their GitHub username. The `cd Desktop` puts the folder somewhere they can find it. Walk through this live. Help anyone stuck.
 
 4. Everyone opens the `github-os` folder in their AI tool:
-   - **Claude Code:** open terminal, `cd ~/Desktop/github-os && claude`
+   - **Claude Code:** in the same terminal, `cd github-os` then `claude`
    - **Cursor:** File > Open Folder > Desktop > github-os
    - **Claude Desktop:** Start a new Project, click "Add content", add the github-os folder
 

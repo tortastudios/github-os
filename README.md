@@ -7,17 +7,18 @@ A starter repo that works as your personal operating system. Set it up, teach it
 Before you start, install these (all free):
 
 1. **GitHub account** -- [sign up here](https://github.com/signup)
-2. **Git** -- [download here](https://git-scm.com/downloads). This is the engine that powers GitHub on your machine.
+2. **Git** -- [download here](https://git-scm.com/downloads). This is the engine that powers GitHub on your machine. Windows users: accept all default options during install. This also installs **Git Bash**, the terminal you'll use.
 3. **An AI tool** that can read local files -- [Claude Desktop](https://claude.ai/download), [Claude Code](https://docs.anthropic.com/en/docs/claude-code), or [Cursor](https://cursor.sh/)
 
 ## Quick Start
 
 1. Click **"Use this template"** on this repo page -- this creates your own copy under your GitHub account
-2. Clone your new repo by opening a terminal and running:
+2. Clone your new repo by opening a terminal (Terminal on Mac, Git Bash on Windows) and running:
    ```
+   cd Desktop
    git clone https://github.com/YOUR-USERNAME/github-os.git
    ```
-   Replace `YOUR-USERNAME` with your GitHub username. This downloads the repo to your computer.
+   Replace `YOUR-USERNAME` with your GitHub username. This downloads the repo to your Desktop.
 3. Open the `github-os` folder in your AI tool
 4. Say: *"Help me set up my OS"*
 5. Say: *"Help me build my operating manual"*
